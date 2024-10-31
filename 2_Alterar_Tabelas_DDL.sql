@@ -1,40 +1,31 @@
--- 1. Adicionar uma coluna de 'Editora' à tabela Livros
-ALTER TABLE Livros
-ADD COLUMN Editora VARCHAR(100);
+ALTER TABLE Funcionarios 
+ADD Email VARCHAR(100);
 
--- 2. Modificar o tipo da coluna 'Preco' na tabela Livros para incluir mais precisão
-ALTER TABLE Livros
-MODIFY COLUMN Preco DECIMAL(12, 2);
+ALTER TABLE Funcionarios 
+MODIFY Telefone VARCHAR(20);
 
--- 3. Adicionar uma coluna 'Email' à tabela Funcionarios
-ALTER TABLE Funcionarios
-ADD COLUMN Email VARCHAR(100);
+ALTER TABLE Livros 
+ADD Editor VARCHAR(100);
 
--- 4. Remover a coluna 'Responsavel' da tabela Departamentos
-ALTER TABLE Departamentos
-DROP COLUMN Responsavel;
+ALTER TABLE Departamentos 
+DROP COLUMN Descricao;
 
--- 5. Adicionar uma nova coluna 'Data_Reserva' à tabela Exemplares
-ALTER TABLE Exemplares
-ADD COLUMN Data_Reserva DATE;
+ALTER TABLE Exemplares 
+ADD Data_Exclusao DATE;
 
--- 6. Modificar a coluna 'Telefone' na tabela Funcionarios para permitir NULL
-ALTER TABLE Funcionarios
-MODIFY COLUMN Telefone VARCHAR(15) NULL;
+ALTER TABLE Exemplares 
+MODIFY Estado ENUM('Disponível', 'Reservado', 'Danificado', 'Perdido');
 
--- 7. Adicionar uma coluna 'Idioma' à tabela Livros
-ALTER TABLE Livros
-ADD COLUMN Idioma VARCHAR(50) DEFAULT 'Português';
+ALTER TABLE Detalhes_Pedido 
+ADD Data_Pedido DATE NOT NULL;
 
--- 8. Adicionar uma chave estrangeira para associar Palavras-Chave aos Livros
-ALTER TABLE Livros
-ADD COLUMN Palavra_Chave_Codigo INT,
-ADD FOREIGN KEY (Palavra_Chave_Codigo) REFERENCES Palavras_Chave(Codigo);
+-- Cria um novo índice na tabela Livros para melhorar a busca pelo título
+CREATE INDEX idx_titulo ON Livros(Titulo);
 
--- 9. Adicionar uma coluna de 'Status_Reserva' na tabela Exemplares
-ALTER TABLE Exemplares
-ADD COLUMN Status_Reserva ENUM('Ativo', 'Inativo') DEFAULT 'Ativo';
+ALTER TABLE Detalhes_Pedido 
+ADD CONSTRAINT fk_cliente 
+FOREIGN KEY (Cliente_ID) REFERENCES Clientes(ID) ON DELETE CASCADE;
 
--- 10. Renomear a coluna 'Descricao' para 'Detalhes' na tabela Areas_Conhecimento
-ALTER TABLE Areas_Conhecimento
-CHANGE COLUMN Descricao Detalhes TEXT;
+ALTER TABLE Livros 
+MODIFY Preco DECIMAL(10, 2) NULL;
+

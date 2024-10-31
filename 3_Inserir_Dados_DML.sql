@@ -1,103 +1,131 @@
--- Inserindo Departamentos
-INSERT INTO Departamentos (Nome, Descricao) VALUES
-('Marketing', 'Responsável pelas estratégias de divulgação'),
-('Financeiro', 'Gerenciamento de finanças e contabilidade'),
-('Editorial', 'Responsável pela edição dos livros'),
-('Logística', 'Gestão de estoque e distribuição de livros'),
-('Atendimento ao Cliente', 'Auxílio e suporte ao cliente'),
-('Recursos Humanos', 'Gerenciamento de pessoal e contratação'),
-('Desenvolvimento', 'Desenvolvimento de novos produtos e serviços'),
-('Qualidade', 'Controle de qualidade dos livros'),
-('Vendas', 'Gestão das vendas e relacionamento com clientes'),
-('Pesquisa de Mercado', 'Análise de mercado e tendências');
+INSERT INTO Departamentos (Nome, Responsavel) VALUES
+('Ficção', 'João Silva'),
+('Não-Ficção', 'Maria Oliveira'),
+('Infantil', 'Ana Costa'),
+('Técnico', 'Pedro Souza'),
+('História', 'Lucia Ramos'),
+('Biografia', 'Ricardo Alves'),
+('Literatura Estrangeira', 'Fernanda Santos'),
+('Poesia', 'Carlos Lima'),
+('Autoajuda', 'Tatiane Almeida'),
+('Fantasia', 'Roberto Ferreira');
 
--- Inserindo Funcionários (incluindo a nova coluna Email)
-INSERT INTO Funcionarios (Nome, Cargo, Telefone, Endereco, Departamento_ID, Email) VALUES
-('Carlos Silva', 'Editor', '111111111', 'Rua A, 123', 3, 'carlos.silva@editora.com'),
-('Mariana Costa', 'Assistente', '222222222', 'Rua B, 456', 1, 'mariana.costa@editora.com'),
-('Pedro Rocha', 'Contador', '333333333', 'Rua C, 789', 2, 'pedro.rocha@editora.com'),
-('Ana Lima', 'Atendente', NULL, 'Rua D, 101', 5, 'ana.lima@editora.com'),
-('Bruno Nunes', 'Logístico', '555555555', 'Rua E, 202', 4, 'bruno.nunes@editora.com'),
-('Julia Fernandes', 'Gerente', '666666666', 'Rua F, 303', 6, 'julia.fernandes@editora.com'),
-('Lucas Almeida', 'Desenvolvedor', '777777777', 'Rua G, 404', 7, 'lucas.almeida@editora.com'),
-('Roberta Mendes', 'Supervisora de Qualidade', '888888888', 'Rua H, 505', 8, 'roberta.mendes@editora.com'),
-('Felipe Oliveira', 'Vendedor', '999999999', 'Rua I, 606', 9, 'felipe.oliveira@editora.com'),
-('Sofia Castro', 'Analista de Mercado', '000000000', 'Rua J, 707', 10, 'sofia.castro@editora.com');
+INSERT INTO Funcionarios (Nome, Cargo, Telefone, Email, Endereco, Departamento_ID) VALUES
+('Marcos Pereira', 'Gerente', '1234-5678', 'marcos@example.com', 'Rua A, 123', 1),
+('Julia Gomes', 'Atendente', '2345-6789', 'julia@example.com', 'Rua B, 456', 2),
+('Carlos Santos', 'Caixa', '3456-7890', 'carlos@example.com', 'Rua C, 789', 3),
+('Tatiane Lima', 'Vendedora', '4567-8901', 'tatiane@example.com', 'Rua D, 101', 1),
+('Paulo Henrique', 'Estoquista', '5678-9012', 'paulo@example.com', 'Rua E, 202', 4),
+('Fernanda Cruz', 'Supervisor', '6789-0123', 'fernanda@example.com', 'Rua F, 303', 2),
+('Rafael Oliveira', 'Atendente', '7890-1234', 'rafael@example.com', 'Rua G, 404', 3),
+('Lucas Silva', 'Gerente', '8901-2345', 'lucas@example.com', 'Rua H, 505', 1),
+('Aline Ferreira', 'Assistente', '9012-3456', 'aline@example.com', 'Rua I, 606', 2),
+('Eduardo Martins', 'Vendedor', '0123-4567', 'eduardo@example.com', 'Rua J, 707', 3);
 
--- Inserindo Autores
 INSERT INTO Autores (Nome, Biografia, Nacionalidade, Data_Nascimento) VALUES
-('Autor A', 'Biografia do Autor A', 'Brasil', '1975-05-10'),
-('Autor B', 'Biografia do Autor B', 'Portugal', '1980-07-20'),
-('Autor C', 'Biografia do Autor C', 'Espanha', '1990-03-15'),
-('Autor D', 'Biografia do Autor D', 'Estados Unidos', '1965-12-01'),
-('Autor E', 'Biografia do Autor E', 'França', '1972-09-25'),
-('Autor F', 'Biografia do Autor F', 'Reino Unido', '1985-11-30'),
-('Autor G', 'Biografia do Autor G', 'Alemanha', '1992-04-22'),
-('Autor H', 'Biografia do Autor H', 'Itália', '1988-01-15'),
-('Autor I', 'Biografia do Autor I', 'Canadá', '1979-10-05'),
-('Autor J', 'Biografia do Autor J', 'Japão', '1983-02-14');
+('Machado de Assis', 'Um dos maiores escritores brasileiros.', 'Brasileiro', '1839-06-21'),
+('Clarice Lispector', 'Famosa escritora e jornalista.', 'Brasileira', '1920-12-10'),
+('J.K. Rowling', 'Autora da série Harry Potter.', 'Britânica', '1965-07-31'),
+('George Orwell', 'Escritor britânico, autor de 1984.', 'Britânico', '1903-06-25'),
+('Gabriel García Márquez', 'Prêmio Nobel de Literatura.', 'Colombiano', '1927-03-06'),
+('Jane Austen', 'Famosa autora inglesa.', 'Britânica', '1775-12-16'),
+('Ernest Hemingway', 'Escritor americano.', 'Americano', '1899-07-21'),
+('Agatha Christie', 'Rainha do crime.', 'Britânica', '1890-09-15'),
+('Haruki Murakami', 'Romancista japonês.', 'Japonês', '1949-01-12'),
+('Fernando Pessoa', 'Um dos maiores poetas portugueses.', 'Português', '1888-06-13');
 
--- Inserindo Áreas de Conhecimento
-INSERT INTO Areas_Conhecimento (Detalhes) VALUES
-('Literatura Brasileira'),
-('Ciência e Tecnologia'),
-('História Universal'),
-('Arte e Cultura'),
-('Literatura Estrangeira'),
-('Ficção Fantástica'),
-('Psicologia'),
-('Educação'),
+INSERT INTO Areas_Conhecimento (Descricao) VALUES
+('Literatura'),
+('História'),
+('Ciências Sociais'),
+('Matemática'),
+('Física'),
+('Química'),
+('Biologia'),
+('Geografia'),
 ('Filosofia'),
-('Negócios e Empreendedorismo');
+('Artes');
 
--- Inserindo Livros (incluindo as colunas Editora, Idioma e Palavra_Chave_Codigo)
-INSERT INTO Livros (ISBN, Titulo, Autor_ID, Departamento_ID, Area_Conhecimento_ID, Data_Publicacao, Genero, Numero_Paginas, Preco, Editora, Idioma) VALUES
-('9781234567897', 'Livro A', 1, 3, 1, '2020-06-15', 'Ficção', 300, 45.00, 'Editora X', 'Português'),
-('9782345678901', 'Livro B', 2, 1, 2, '2019-04-10', 'Ciência', 150, 30.00, 'Editora Y', 'Inglês'),
-('9783456789012', 'Livro C', 3, 2, 3, '2021-09-05', 'História', 220, 50.00, 'Editora Z', 'Espanhol'),
-('9784567890123', 'Livro D', 4, 4, 4, '2018-11-22', 'Tecnologia', 400, 60.00, 'Editora W', 'Português'),
-('9785678901234', 'Livro E', 5, 5, 5, '2017-08-30', 'Arte', 250, 55.00, 'Editora X', 'Francês'),
-('9786789012345', 'Livro F', 6, 1, 1, '2022-05-12', 'Ficção Científica', 320, 40.00, 'Editora Y', 'Inglês'),
-('9787890123456', 'Livro G', 7, 3, 2, '2020-01-08', 'Biografia', 210, 35.00, 'Editora Z', 'Alemão'),
-('9788901234567', 'Livro H', 8, 2, 3, '2015-12-01', 'Romance', 180, 25.00, 'Editora W', 'Italiano'),
-('9789012345678', 'Livro I', 9, 4, 4, '2019-10-30', 'Terror', 300, 55.00, 'Editora X', 'Francês'),
-('9780123456789', 'Livro J', 10, 5, 5, '2021-07-15', 'História', 400, 75.00, 'Editora Y', 'Português');
+INSERT INTO Livros (ISBN, Titulo, Autor_ID, Departamento_ID, Area_Conhecimento_ID, Data_Publicacao, Genero, Numero_Paginas, Preco) VALUES
+('9783161484100', 'Dom Casmurro', 1, 1, 1, '1899-04-01', 'Ficção', 250, 29.90),
+('9783161484101', 'A Moreninha', 2, 1, 1, '1844-03-01', 'Ficção', 200, 19.90),
+('9783161484102', 'Harry Potter e a Pedra Filosofal', 3, 1, 1, '1997-06-26', 'Fantasia', 309, 49.90),
+('9783161484103', '1984', 4, 1, 1, '1949-06-08', 'Ficção', 328, 39.90),
+('9783161484104', 'Cem Anos de Solidão', 5, 1, 1, '1967-05-30', 'Ficção', 417, 59.90),
+('9783161484105', 'Orgulho e Preconceito', 6, 1, 1, '1813-01-28', 'Ficção', 432, 39.90),
+('9783161484106', 'O Velho e o Mar', 7, 1, 1, '1952-09-01', 'Ficção', 128, 29.90),
+('9783161484107', 'A Morte e a Morte de Quincas Berro DÁgua', 8, 1, 1, '1961-01-01', 'Ficção', 208, 34.90),
+('9783161484108', 'O Pequeno Príncipe', 9, 1, 1, '1943-04-06', 'Ficção', 96, 24.90),
+('9783161484109', 'O Apanhador no Campo de Centeio', 10, 1, 1, '1951-07-16', 'Ficção', 277, 34.90);
 
--- Inserindo Exemplares (incluindo a nova coluna Data_Reserva e Status_Reserva)
-INSERT INTO Exemplares (ISBN, Estado, Localizacao, Data_Reserva, Status_Reserva) VALUES
-('9781234567897', 'Disponível', 'Prateleira 1', NULL, 'Ativo'),
-('9782345678901', 'Reservado', 'Prateleira 2', '2023-05-15', 'Ativo'),
-('9783456789012', 'Danificado', 'Prateleira 3', NULL, 'Inativo'),
-('9784567890123', 'Disponível', 'Prateleira 4', NULL, 'Ativo'),
-('9785678901234', 'Reservado', 'Prateleira 5', '2023-05-20', 'Ativo'),
-('9786789012345', 'Disponível', 'Prateleira 6', NULL, 'Ativo'),
-('9787890123456', 'Disponível', 'Prateleira 7', NULL, 'Ativo'),
-('9788901234567', 'Danificado', 'Prateleira 8', NULL, 'Inativo'),
-('9789012345678', 'Disponível', 'Prateleira 9', NULL, 'Ativo'),
-('9780123456789', 'Reservado', 'Prateleira 10', '2023-10-25', 'Ativo');
+INSERT INTO Exemplares (ISBN, Estado, Localizacao) VALUES
+('9783161484100', 'Disponível', 'Estante 1'),
+('9783161484101', 'Reservado', 'Estante 2'),
+('9783161484102', 'Disponível', 'Estante 3'),
+('9783161484103', 'Danificado', 'Estante 4'),
+('9783161484104', 'Disponível', 'Estante 5'),
+('9783161484105', 'Reservado', 'Estante 6'),
+('9783161484106', 'Danificado', 'Estante 7'),
+('9783161484107', 'Disponível', 'Estante 8'),
+('9783161484108', 'Perdido', 'Estante 9'),
+('9783161484109', 'Disponível', 'Estante 10');
 
--- Inserindo Palavras-chave
+INSERT INTO Clientes (Nome, Email, Telefone, Endereco) VALUES
+('Ricardo Almeida', 'ricardo@example.com', '9988-7766', 'Rua L, 123'),
+('Lucia Fernandes', 'lucia@example.com', '8877-6655', 'Rua M, 234'),
+('Carlos Henrique', 'carlos@example.com', '7766-5544', 'Rua N, 345'),
+('Tatiane Lima', 'tatiane@example.com', '6655-4433', 'Rua O, 456'),
+('Eduardo Martins', 'eduardo@example.com', '5544-3322', 'Rua P, 567'),
+('Fernanda Costa', 'fernanda@example.com', '4433-2211', 'Rua Q, 678'),
+('Juliana Rocha', 'juliana@example.com', '3322-1100', 'Rua R, 789'),
+('Felipe Silva', 'felipe@example.com', '2211-0099', 'Rua S, 890'),
+('Amanda Pereira', 'amanda@example.com', '1100-9988', 'Rua T, 901'),
+('Victor Hugo', 'victor@example.com', '9988-8877', 'Rua U, 012');
+
+INSERT INTO Pedidos_Vendas (Cliente_ID, Data_Transacao, Status_Pedido, Total) VALUES
+(1, '2024-10-01', 'Finalizado', 29.90),
+(2, '2024-10-02', 'Pendente', 19.90),
+(3, '2024-10-03', 'Cancelado', 49.90),
+(4, '2024-10-04', 'Finalizado', 39.90),
+(5, '2024-10-05', 'Finalizado', 59.90),
+(6, '2024-10-06', 'Pendente', 39.90),
+(7, '2024-10-07', 'Finalizado', 29.90),
+(8, '2024-10-08', 'Cancelado', 34.90),
+(9, '2024-10-09', 'Finalizado', 24.90),
+(10, '2024-10-10', 'Finalizado', 34.90);
+
+INSERT INTO Detalhes_Pedido (Pedido_ID, Numero_Serie, Quantidade, Preco, Cliente_ID, Data_Pedido) VALUES
+(1, 1, 1, 29.90, 1, '2024-10-01'),
+(2, 2, 1, 19.90, 2, '2024-10-02'),
+(3, 3, 1, 49.90, 3, '2024-10-03'),
+(4, 4, 1, 39.90, 4, '2024-10-04'),
+(5, 5, 1, 59.90, 5, '2024-10-05'),
+(6, 6, 1, 39.90, 6, '2024-10-06'),
+(7, 7, 1, 29.90, 7, '2024-10-07'),
+(8, 8, 1, 34.90, 8, '2024-10-08'),
+(9, 9, 1, 24.90, 9, '2024-10-09'),
+(10, 10, 1, 34.90, 10, '2024-10-10');
+
 INSERT INTO Palavras_Chave (Descricao) VALUES
 ('Ficção'),
-('Ciência'),
-('História'),
-('Tecnologia'),
-('Arte'),
 ('Romance'),
-('Terror'),
-('Biografia'),
-('Ficção Científica'),
-('Literatura Juvenil');
+('Aventura'),
+('Mistério'),
+('História'),
+('Literatura'),
+('Cultura'),
+('Educação'),
+('Ciência'),
+('Tecnologia');
 
--- Inserindo Pedidos e Vendas
-INSERT INTO Pedidos_Vendas (Cliente, Data_Transacao, Status_Pedido, Total) VALUES
-('João Silva', '2023-05-15', 'Finalizado', 90.00),
-('Maria Santos', '2023-06-01', 'Pendente', 45.00),
-('Carlos Pereira', '2023-07-10', 'Cancelado', 120.00),
-('Ana Oliveira', '2023-08-22', 'Finalizado', 60.00),
-('Paulo Souza', '2023-09-15', 'Pendente', 75.00),
-('Luana Almeida', '2023-10-05', 'Finalizado', 150.00),
-('Marcio Rodrigues', '2023-10-10', 'Cancelado', 200.00),
-('Fernanda Martins', '2023-10-15', 'Finalizado', 50.00),
-('Ricardo Gomes', '2023-10-20', 'Pendente', 30.00),
-('Sofia Lima', '2023-10-25', 'Finalizado', 100.00);
+INSERT INTO Livros_Palavras_Chave (Livro_ISBN, Palavra_Chave_Codigo) VALUES
+('9783161484100', 1),
+('9783161484101', 1),
+('9783161484102', 2),
+('9783161484103', 2),
+('9783161484104', 3),
+('9783161484105', 4),
+('9783161484106', 5),
+('9783161484107', 6),
+('9783161484108', 7),
+('9783161484109', 8);

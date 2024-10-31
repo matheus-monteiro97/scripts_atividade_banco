@@ -1,34 +1,24 @@
--- Destruir todas as views
-DROP VIEW IF EXISTS 
-    vw_Livros_Autores,
-    vw_Exemplares_Disponiveis,
-    vw_Pedidos_Vendas_Detalhes,
-    vw_Total_Livros_Area,
-    vw_Funcionarios_Departamentos,
-    vw_Total_Vendas_Periodo,
-    vw_Livros_Palavras_Chave,
-    vw_Contagem_Exemplares,
-    vw_Pedidos_Pendentes,
-    vw_Palavras_Chave_Livros,
-    vw_Livros_por_Genero,
-    vw_Autores_Total_Livros,
-    vw_Livros_por_Autor,
-    vw_Exemplares_Danificados,
-    vw_Livros_Publicados_Ano,
-    vw_Funcionarios_por_Departamento,
-    vw_Livros_Mais_X_Paginas,
-    vw_Livro_Mais_Caro,
-    vw_Total_Pedidos_por_Cliente,
-    vw_Exemplares_por_Localizacao;
+DROP VIEW IF EXISTS vw_Livros_Autores;
+DROP VIEW IF EXISTS vw_Funcionarios_Departamentos;
+DROP VIEW IF EXISTS vw_Total_Exemplares_Disponiveis;
+DROP VIEW IF EXISTS vw_Pedidos_Clientes;
+DROP VIEW IF EXISTS vw_Autores_Livros_Area;
+DROP VIEW IF EXISTS vw_Livros_Reservados;
+DROP VIEW IF EXISTS vw_Media_Preco_Departamento;
+DROP VIEW IF EXISTS vw_Pedidos_Pendentes;
+DROP VIEW IF EXISTS vw_Livros_Palavras_Chave;
+DROP VIEW IF EXISTS vw_Clientes_Pedidos;
 
--- Destruir tabelas com dependências primeiro
-DROP TABLE IF EXISTS 
-    Livros_Palavras_Chave,  -- Remove a tabela de relacionamento primeiro
-    Exemplares,              -- Remove exemplares que não têm dependências
-    Pedidos_Vendas,          -- Remove pedidos e vendas
-    Funcionarios,            -- Remove funcionários
-    Livros,                  -- Remove livros
-    Palavras_Chave,          -- Remove palavras-chave
-    Areas_Conhecimento,      -- Remove áreas de conhecimento
-    Autores,                 -- Remove autores
-    Departamentos;           -- Remove departamentos
+DROP TABLE IF EXISTS Detalhes_Pedido;
+DROP TABLE IF EXISTS Pedidos_Vendas;
+DROP TABLE IF EXISTS Exemplares;
+DROP TABLE IF EXISTS Livros_Palavras_Chave;
+DROP TABLE IF EXISTS Palavras_Chave;
+DROP TABLE IF EXISTS Clientes;
+DROP TABLE IF EXISTS Livros;
+DROP TABLE IF EXISTS Areas_Conhecimento;
+DROP TABLE IF EXISTS Autores;
+DROP TABLE IF EXISTS Funcionarios;
+DROP TABLE IF EXISTS Departamentos;
+
+DROP DATABASE IF EXISTS livraria;

@@ -1,64 +1,73 @@
--- Remoção do modo seguro
 SET SQL_SAFE_UPDATES = 0;
 
--- Atualizações (UPDATE)
--- Atualizar o estado de um exemplar
-UPDATE Exemplares SET Estado = 'Reservado' WHERE ISBN = '9781234567897';
+UPDATE Funcionarios
+SET Email = 'novoemail@exemplo.com'
+WHERE ID = 1;
 
--- Atualizar o preço de um livro
-UPDATE Livros SET Preco = 50.00 WHERE ISBN = '9782345678901';
+UPDATE Funcionarios
+SET Cargo = 'Gerente'
+WHERE ID = 2;
 
--- Atualizar a descrição de um departamento
-UPDATE Departamentos SET Descricao = 'Gerenciamento de finanças e contabilidade e auditoria' WHERE Nome = 'Financeiro';
+UPDATE Areas_Conhecimento
+SET Descricao = 'Ficção Científica'
+WHERE Codigo = 1;
 
--- Atualizar o cargo de um funcionário
-UPDATE Funcionarios SET Cargo = 'Diretor Financeiro' WHERE Nome = 'Pedro Rocha';
+DELETE FROM Autores
+WHERE ID = 3;
 
--- Atualizar a biografia de um autor
-UPDATE Autores SET Biografia = 'Nova biografia do Autor A' WHERE Nome = 'Autor A';
+UPDATE Livros
+SET Preco = 24.90
+WHERE ISBN = '9783161484100';
 
--- Atualizar o estado de um pedido
-UPDATE Pedidos_Vendas SET Status_Pedido = 'Finalizado' WHERE Cliente = 'João da Silva';
+DELETE FROM Exemplares
+WHERE Numero_Serie = 5;
 
--- Atualizar a localização de um exemplar
-UPDATE Exemplares SET Localizacao = 'Prateleira 11' WHERE ISBN = '9784567890123';
+UPDATE Clientes
+SET Nome = 'Carlos Silva'
+WHERE ID = 4;
 
--- Atualizar o nome de um funcionário
-UPDATE Funcionarios SET Nome = 'Carlos Alberto Silva' WHERE Nome = 'Carlos Silva';
+DELETE FROM Pedidos_Vendas
+WHERE ID = 2;
 
--- Atualizar o gênero de um livro
-UPDATE Livros SET Genero = 'Ficção Dramática' WHERE ISBN = '9785678901234';
+UPDATE Pedidos_Vendas
+SET Status_Pedido = 'Finalizado'
+WHERE ID = 3;
 
--- Atualizar a data de reserva de um exemplar
-UPDATE Exemplares SET Data_Reserva = '2023-10-31' WHERE ISBN = '9782345678901';
+DELETE FROM Detalhes_Pedido
+WHERE ID = 7;
 
--- Deleções (DELETE)
--- Deletar um livro pelo ISBN
-DELETE FROM Livros WHERE ISBN = '9788901234567';
+UPDATE Exemplares
+SET Localizacao = 'Estante 2 - Seção A'
+WHERE Numero_Serie = 3;
 
--- Deletar um autor pelo nome
-DELETE FROM Autores WHERE Nome = 'Autor J';
+UPDATE Livros
+SET Data_Publicacao = '1850-01-01'
+WHERE ISBN = '9783161484101';
 
--- Deletar um funcionário pelo ID
-DELETE FROM Funcionarios WHERE Nome = 'Roberta Mendes';
+DELETE FROM Clientes
+WHERE ID = 6;
 
--- Deletar um exemplar pelo número de série
-DELETE FROM Exemplares WHERE ISBN = '9786789012345';
+UPDATE Funcionarios
+SET Telefone = '98765-4321'
+WHERE ID = 5;
 
--- Deletar um pedido pelo cliente
-DELETE FROM Pedidos_Vendas WHERE Cliente = 'Patrícia Alves';
+DELETE FROM Palavras_Chave
+WHERE Codigo = 9;
 
--- Deletar uma palavra-chave pelo código
-DELETE FROM Palavras_Chave WHERE Descricao = 'Terror';
+UPDATE Detalhes_Pedido
+SET Quantidade = 3
+WHERE ID = 8;
 
--- Deletar um departamento pelo nome
-DELETE FROM Departamentos WHERE Nome = 'Pesquisa de Mercado';
+UPDATE Livros
+SET Genero = 'Aventura'
+WHERE ISBN = '9783161484102';
 
--- Deletar uma área de conhecimento pelo código
-DELETE FROM Areas_Conhecimento WHERE Detalhes = 'Educação';
+DELETE FROM Exemplares
+WHERE Estado = 'Perdido';
 
--- Deletar todos os exemplares que estão danificados
-DELETE FROM Exemplares WHERE Estado = 'Danificado';
+UPDATE Departamentos
+SET Nome = 'Literatura Clássica'
+WHERE ID = 1;
 
--- Deletar todos os pedidos com status 'Cancelado'
-DELETE FROM Pedidos_Vendas WHERE Status_Pedido = 'Cancelado';
+DELETE FROM Pedidos_Vendas
+WHERE Data_Transacao < '2024-01-01';
